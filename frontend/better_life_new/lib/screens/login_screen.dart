@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     try {
-      final url = Uri.parse('http://10.0.2.2:5000/auth/login');
+      final url = Uri.parse('https://better-life-wqk6.onrender.com/auth/login');
 
       final response = await http.post(
         url,
