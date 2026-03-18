@@ -9,11 +9,12 @@ mood_bp = Blueprint("mood", __name__)
 def add_today_mood():
     data = request.get_json()
     mood_value = data.get("mood")
+    note = data.get("note", "")
     if mood_value is None:
         return jsonify({"error": "Mood value is required"}), 400
 
     user_id = get_jwt_identity()
-    mood_id, error = log_mood(user_id, mood_value)
+    mood_id, error = log_mood(user_id, mood_value, note)
     if error:
         return jsonify({"error": error}), 400
 

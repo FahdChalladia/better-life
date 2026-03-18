@@ -13,7 +13,7 @@ def create_app():
     jwt.init_app(app)
     app.register_blueprint(auth_bp, url_prefix="/auth")
     app.register_blueprint(mood_bp, url_prefix="/moods")
-    app.register_blueprint(user_bp, url_prefix="/user")
+    app.register_blueprint(user_bp, url_prefix="/users")
     app.register_blueprint(insight_bp, url_prefix="")
     @app.route("/")
     def home():
