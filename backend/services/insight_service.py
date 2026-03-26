@@ -11,10 +11,10 @@ def get_weekly_insights(user_id):
     mood_sum = 0
     mood_count = 0
     def get_label(value):
-        if value >= 7:
-            return "happy"
-        elif value <= 4:
+        if value >= 4:
             return "sad"
+        elif value <= 2:
+            return "happy"
         else:
             return "neutral"
 
